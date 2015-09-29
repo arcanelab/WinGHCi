@@ -21,6 +21,7 @@
 #include "WinGHCi.h"
 
 #include <locale.h>
+#include <ShellScalingAPI.h>
 
 #define BUFFER_MAXLEN			128
 #define UNICODE_BUFFER_MAXLEN	5*BUFFER_MAXLEN
@@ -643,6 +644,7 @@ INT APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmd
 	DWORD dwPrinterThreadId;
 	HACCEL hAccelTable;
 
+	SetProcessDpiAwareness(PROCESS_SYSTEM_DPI_AWARE);
 
 	setlocale( LC_ALL, ".ACP" );
 
